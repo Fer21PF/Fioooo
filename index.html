@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    
+    <audio id="audio" autoplay loop style="display: none;">
+        <source src="rio.mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio HTML5.
+    </audio>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Para Fiorela</strong>
+                        <p>
+                            Quiero expresarte lo hermosa que eres, tanto por dentro como por fuera.Tu belleza va más allá de lo
+                            físico; se refleja en tu bondad, compasión y amor hacia los demás. Tu presencia hace del
+                            mundo un lugar más hermoso y reconfortante. Recuerda siempre tu valor y la luz que compartes
+                            con el mundo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+
+        // Reproduce el audio al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById("audio").play();
+        });
+    </script>
+</body>
+
+</html>
